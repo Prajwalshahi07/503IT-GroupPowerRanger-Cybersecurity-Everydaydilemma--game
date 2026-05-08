@@ -1,0 +1,11 @@
+Today, I finalized the comprehensive Game Overview and Game Design Document for "Everyday Dilemma," 
+which included defining the target audience of Coventry University students (18–25) and the core gameplay loop. 
+I authored the Project Management Plan using a Hybrid approach, combining Waterfall planning for deadlines with 
+Agile development for prototype building. I also coordinated the technical transition of our prototype to ensure 
+it met our learning objectives after troubleshooting initial NameError and ModuleNotFoundError issues.
+
+What I learned
+I learned how a Hybrid methodology allows a team to maintain fixed university deadlines (Waterfall) 
+while remaining flexible enough to debug code errors in real-time (Agile). I also learned how to translate
+cybersecurity "red flags," like urgent language and fake domains, into an interactive feedback system that 
+teaches players through "System Blasts" and "Green Checks".
