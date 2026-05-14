@@ -48,7 +48,7 @@ Click the provided link and enter the university username and password.
 
 Option 2
 
-Ignore the email, visit the official university website, and report the suspicious message to the university.
+Ignore the email, visit the official university w tebsite, and report the suspicious message tohe university.
 
 Gameplay and Scoring System
 
@@ -71,3 +71,7 @@ Recognize social engineering tactics
 Verify suspicious links and messages
 Practice safe online behavior
 Understand the consequences of sharing personal information online
+
+on the second session the team looked on the UX of the different games related to cyber awareness and to get some ideas for the project. 
+we agreed on using cyber military theme inspired form cybermission, visual symbols from prodigy education and high contrast colors from cyberedu game. 
+we updated our canvas and storyboard inspired by the UX of the games we looked at earlier. 
