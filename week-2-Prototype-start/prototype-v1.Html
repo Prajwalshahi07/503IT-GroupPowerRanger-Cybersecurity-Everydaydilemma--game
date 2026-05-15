@@ -1,1 +1,304 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2.8">
+  <title>Everyday Dilemma • Phishing Awareness</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ==================== 1. COLOR VARIABLES ==================== */
+    :root {
+      --navy: #0A1F3D;
+      --purple: #6A0DAD;
+      --neon: #00FF9F;
+      --accent: #FF00AA;
+    }
+    /* ==================== 2. GLOBAL STYLES ==================== */
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(180deg, #0A1F3D 0%, #1A0033 100%);
+      color: #e0e0ff;
+      min-height: 100vh;
+      background-image:
+        linear-gradient(rgba(0,255,159,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,159,0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /* ==================== 3. MAIN GAME CONTAINER (HUD) ==================== */
+    .hud {
+      background: rgba(10,31,61,0.95);
+      border: 3px solid var(--neon);
+      box-shadow: 0 0 30px rgba(0,255,159,0.4);
+      border-radius: 24px;
+      padding: 35px 25px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .neon-text {
+      text-shadow: 0 0 15px var(--neon), 0 0 30px var(--accent);
+    }
+    /* ==================== 4. PREMIUM CYBER LOGO ==================== */
+    .cyber-logo {
+      width: 260px;
+      height: 300px;
+      margin: 10px auto 20px;
+      position: relative;
+    }
+    .shield {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #8A2BE2, #00BFFF, #6A0DAD);
+      clip-path: polygon(50% 8%, 90% 25%, 90% 70%, 50% 95%, 10% 70%, 10% 25%);
+      border: 10px solid #00ffff;
+      box-shadow: 0 0 60px #00ffff, inset 0 0 40px rgba(255,255,255,0.4);
+      animation: shield-glow 3s ease-in-out infinite alternate;
+      position: relative;
+    }
+    .shield::before {
+      content: "📧";
+      font-size: 110px;
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+      text-shadow: 0 0 30px #00ffff;
+      z-index: 2;
+    }
+    .hook {
+      position: absolute;
+      top: 22%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 65px;
+      color: #fff;
+      text-shadow: 0 0 25px #ffff00;
+      z-index: 3;
+    }
+    @keyframes shield-glow {
+      from { filter: drop-shadow(0 0 30px #8A2BE2); }
+      to { filter: drop-shadow(0 0 70px #00ffff); }
+    }
+    /* ==================== 5. ANIMATED CHARACTER ==================== */
+    .character {
+      display: inline-block;
+      margin: 10px 0 15px;
+      animation: bob 3s ease-in-out infinite;
+      transition: transform 0.4s;
+      cursor: pointer;
+      max-width: 340px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 255, 159, 0.5);
+    }
+    .character:hover {
+      animation: worried 0.6s ease-in-out;
+      transform: scale(1.06) rotate(-4deg);
+    }
+    @keyframes bob {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes worried {
+      0%,100% { transform: rotate(-4deg) scale(1.06); }
+      50% { transform: rotate(4deg) scale(1.06); }
+    }
+    /* ==================== 6. BUTTON STYLES ==================== */
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 15px 0;
+      padding: 18px;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 3px solid var(--neon);
+      color: var(--neon);
+      background: transparent;
+      border-radius: 16px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: var(--neon);
+      color: #0A1F3D;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--neon);
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--purple), var(--accent));
+      border: none;
+      color: white;
+    }
+    .hidden { display: none !important; }
+    /* ==================== HOW TO PLAY SPECIFIC STYLES ==================== */
+    .step {
+      text-align: left;
+      background: rgba(255,255,255,0.06);
+      padding: 18px 20px;
+      margin: 15px 0;
+      border-radius: 16px;
+      border-left: 6px solid var(--neon);
+      font-size: 1.05rem;
+      line-height: 1.5;
+      opacity: 0;
+    }
+    #step1 { transition: opacity 1.2s ease-in; }
+    #step1.visible { opacity: 1; }
+    #step2 {
+      transform: translateY(60px);
+      transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    #step2.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    #step3 {
+      transform: rotate(-12deg) scale(0.85);
+      transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    #step3.visible {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
+    #step4 {
+      transform: scale(0.5);
+      box-shadow: 0 0 0 rgba(0, 255, 159, 0);
+      transition: all 1s ease-out;
+    }
+    #step4.visible {
+      transform: scale(1);
+      opacity: 1;
+      box-shadow: 0 0 35px 15px rgba(0, 255, 159, 0.7),
+                  0 0 60px 25px rgba(255, 0, 170, 0.4);
+      animation: glowPulse 2.5s ease-in-out 0.6s forwards;
+    }
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 35px 15px rgba(0, 255, 159, 0.7); }
+      50% { box-shadow: 0 0 55px 30px rgba(255, 0, 170, 0.6); }
+      100% { box-shadow: 0 0 40px 18px rgba(0, 255, 159, 0.8); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ==================== WELCOME PAGE ==================== -->
+    <div id="welcomePage">
+      <div class="hud">
+        <!-- Premium Glowing Cyber Logo -->
+        <div class="cyber-logo">
+          <div class="shield">
+            <div class="hook">🪝</div>
+          </div>
+        </div>
+        <h1 class="neon-text" style="font-size: 2.8rem;">EVERYDAY DILEMMA</h1>
+        <p style="color: var(--neon); font-size: 1.5rem; margin: 8px 0 10px;">
+          PHISHING AWARENESS MISSION
+        </p>
+        <p style="color: #aaa;">Coventry University</p>
+  
+        <!-- FIXED CHARACTER IMAGE - NOW USING YOUR LATEST IMAGE -->
+        <img
+             id="characterImg"
+             src="C:\Users\HP\OneDrive - Coventry University\Desktop\Cyber game\Screenshot 2026-05-15 151836.png"
+             class="character"
+             title="Alex - Tense Phishing Situation"
+             alt="Student sitting in front of laptop with phishing email and thief holding fishing rod"
+             onerror="this.onerror=null; this.src='https://via.placeholder.com/340x280/1A0033/00FF9F?text=IMAGE+NOT+FOUND%0A%0APut+image+in+same+folder';">
+        <div style="margin: 20px 0; font-size: 1.2rem;">
+          <p><strong>Welcome, Alex!</strong></p>
+          <p>Don’t let phishing ruin your semester.</p>
+        </div>
+     
+        <!-- Navigation Buttons -->
+        <button onclick="showHowToPlay()" class="btn">
+          <i class="fas fa-info-circle"></i> HOW TO PLAY
+        </button>
+        <button onclick="startGame()" class="btn btn-primary">
+          <i class="fas fa-play"></i> START GAME
+        </button>
+        <button onclick="showScoreFeedback()" class="btn">
+          <i class="fas fa-trophy"></i> SCORE &amp; FEEDBACK
+        </button>
+      </div>
+    </div>
+    <!-- ==================== HOW TO PLAY PAGE ==================== -->
+    <div id="howToPlayPage" class="hidden">
+      <div class="hud">
+        <h2 class="neon-text" style="font-size: 2.4rem; margin-bottom: 25px;">
+          HOW TO PLAY
+        </h2>
+   
+        <!-- Instructions Steps -->
+        <div class="step" id="step1">
+          <strong>Step 1: Read the Scenario Carefully</strong><br>
+          There are <strong>3 real-life scenarios</strong> (Email &amp; SMS) that Coventry University students commonly receive.
+        </div>
+        <div class="step" id="step2">
+          <strong>Step 2: Choose the Best Action</strong><br>
+          You will be given <strong>3 options</strong>. Choose the safest action to avoid the phishing attack.
+        </div>
+        <div class="step" id="step3">
+          <strong>Step 3: Earn Points + Get Feedback</strong><br>
+          • +25 points for the correct/safe choice<br>
+          • -5 to -25 points for risky or wrong choices<br>
+          You will receive instant feedback explaining the phishing red flags.
+        </div>
+        <div class="step" id="step4">
+          <strong>Step 4: Learn &amp; Level Up</strong><br>
+          Master the 3 key phishing red flags and improve your “Semester Health” score.<br>
+          Complete all missions to earn your <strong>Phishing Defender Certificate</strong>.
+        </div>
+        <div style="margin-top: 40px;">
+          <button onclick="showWelcome()" class="btn">
+            ← BACK TO WELCOME
+          </button>
+          <button onclick="startGame()" class="btn btn-primary">
+            <i class="fas fa-play"></i> START MISSION 01
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Navigation functions
+    function showHowToPlay() {
+      document.getElementById('welcomePage').classList.add('hidden');
+      document.getElementById('howToPlayPage').classList.remove('hidden');
+      animateSteps();
+    }
+    function showWelcome() {
+      document.getElementById('howToPlayPage').classList.add('hidden');
+      document.getElementById('welcomePage').classList.remove('hidden');
+    }
+    function startGame() {
+      alert("Mission starting soon! (Future implementation)");
+    }
+    function showScoreFeedback() {
+      alert("Score & Feedback page coming soon!");
+    }
+    // Sequential Step Animation
+    function animateSteps() {
+      const step1 = document.getElementById('step1');
+      const step2 = document.getElementById('step2');
+      const step3 = document.getElementById('step3');
+      const step4 = document.getElementById('step4');
+      step1.classList.remove('visible');
+      step2.classList.remove('visible');
+      step3.classList.remove('visible');
+      step4.classList.remove('visible');
+      setTimeout(() => { step1.classList.add('visible'); }, 500);
+      setTimeout(() => { step2.classList.add('visible'); }, 4500);
+      setTimeout(() => { step3.classList.add('visible'); }, 8500);
+      setTimeout(() => { step4.classList.add('visible'); }, 12500);
+    }
+  </script>
+</body>
+</html>
