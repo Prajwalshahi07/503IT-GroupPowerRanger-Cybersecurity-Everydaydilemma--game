@@ -74,4 +74,9 @@ Understand the consequences of sharing personal information online
 
 on the second session the team looked on the UX of the different games related to cyber awareness and to get some ideas for the project. 
 we agreed on using cyber military theme inspired form cybermission, visual symbols from prodigy education and high contrast colors from cyberedu game. 
-we updated our canvas and storyboard inspired by the UX of the games we looked at earlier. 
+we updated our canvas and storyboard inspired by the UX of the games we looked at earlier.
+
+on the week 2 second day the team looked on to the prototype of game like animation first welcone frame or page with 
+game heading logo with the 3 icons that is how to play game instruction , start game and score and feed back .
+them the team created game instruction with proper animation and everything .
+
