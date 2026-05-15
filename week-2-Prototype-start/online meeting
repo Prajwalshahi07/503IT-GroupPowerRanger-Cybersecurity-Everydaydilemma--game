@@ -1,1 +1,26 @@
+Project: Everyday Dilemma - Phishing Awareness Game
+Group: 503IT-GroupPowerRanger
 
+# Development Updates (10/05 - 20/05)
+
+# Visual & UX Identity
+We have moved beyond basic storyboarding to a high-fidelity "Cyber Military" theme.
+* Inspiration: Cybermission (Theme), Prodigy Education (Icons), Cyberedu (Palette).
+* UI Strategy:High-contrast alerts to simulate the urgency of a cyber attack.
+
+####  Game Mechanics Summary(discussion for our game about the future)
+* Protagonist: International Student (added emotional stakes via visa-related phishing threats).
+* Scoring Logic: +20 Points: Reporting a phishing email via official channels.
+  * -20 Points: Clicking a link or entering credentials.
+* **Win Condition:** ≥ 80 Points (Semester Success).
+
+Technical Implementation (GitHub Lead: Amrit Sharma)
+Repository branches organized by feature (Narrative, UI, Core Logic).
+ Basic state-machine implemented to handle branching choices.
+
+  Team Contributions (This Period)
+* Shalu /ashika : Coordination of the new UX style guide.
+* Amrit: Initial prototype build and GitHub repo maintenance.
+* Prajwal: Scenario writing for 'The University Admin Phish' and 'The Bank Alert'.
+* Manish: Resource gathering for high-contrast assets.
+* Sujal:Ensuring all milestones were met by the 20/05 deadline.
