@@ -1,0 +1,13 @@
+I create the build up plan for prototype 2
+I suggested some improvements we can do on our game and every part.
+We added the registration page before welcome page where the user needs to enter their username and age.
+There will be total 3 missions in the game. Once registered the first mission will be unlocked. Only after answering the first mission the user can unlock the other missions.
+Each mission is based on a realistic phishing scenario commonly experienced by       university students. 
+Mission 1 focuses on an urgent assignment re-upload phishing scam. 
+Mission 2 focuses on a fake university IT password reset scam. 
+Mission 3 focuses on a fake tuition fee refund phishing scam. 
+Each mission presents the player with a visual phishing scenario using realistic images and interfaces. 
+Every scenario is designed to simulate real cyberattack techniques such as urgency, fear, and fake authority.
+The point system was added to the game but the feedback part is yet to be implemented in the game.
+The user passes the semester if they score 80 or above but will fail the semester if they score below 80.
+They can always replay the game.
