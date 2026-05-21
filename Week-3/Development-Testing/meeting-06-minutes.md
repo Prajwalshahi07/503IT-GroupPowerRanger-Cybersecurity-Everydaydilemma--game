@@ -24,7 +24,7 @@ Shalu Tamang Group Leader / Content Lead |
 The primary objective of this meeting was to update and refine the scenarios for the **PLAY** part of the game. The three selected student scenarios discussed are:
 1.  **Urgent Assignment Re-upload Email:** A high-pressure scenario targeting student anxiety around deadlines.
 2.  **Fake IT Support Password Reset:** A technical spoofing scenario impersonating institutional IT services.
-3.  **Bank Security Alert Text:** A smishing (SMS phishing) scenario simulating urgent financial fraud alerts.
+3. ** fake tution fee refund scam ** scenario simulating urgent financial fraud alerts.
 
 ---
 
