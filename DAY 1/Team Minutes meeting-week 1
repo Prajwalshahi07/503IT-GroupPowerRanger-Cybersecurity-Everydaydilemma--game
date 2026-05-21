@@ -1,0 +1,59 @@
+# Team Meeting Minutes: Meeting 01
+
+## Meeting Details
+* **Project Title:** Everyday Dilemma — Phishing Awareness Game
+* **Timeline / Phase:** Week 1 (Session 1 & 2) — Project Initiation & Ideation
+* **Date & Time:** 07 May 2026 | 10:00 AM – 12:30 PM (2.5 Hours)
+* **Location:** Room 208 (503 IT)
+* **Meeting Chair:** Sujal Pathak (Facilitator & Timekeeper)
+* **Minute-Taker:** Manish Thapa (Project Coordinator)
+
+---
+
+## Attendance & Core Roles
+
+| Student Name | Designated Role |
+| :--- | :--- |
+| **Sujal Pathak** | Meeting Chair |
+| **Manish Thapa** | Minute-Taker / Project Coordinator |
+| **Amrit Sharma** | Prototype Developer / GitHub Lead |
+| **Prajwal Shahi** | Game Design Lead / Research Lead |
+| **Shalu Tamang** | Group Leader / Content Lead |
+
+---
+
+## Agenda Items
+1. **Brainstorming & Concept Selection:** Discuss and finalize the core theme of the project.
+2. **Role Distribution:** Formally assign core responsibilities and roles to each team member.
+3. **Repository Setup:** Establish the foundational Git workflow and project directory structure.
+4. **Target Audience Analysis:** Identify who the game is for and what core problems it will solve.
+
+---
+
+## Decisions Made
+* **Project Direction:** Agreed to build a web-based phishing awareness game titled **"Everyday Dilemma"** aimed at educating students on cybersecurity threats.
+* **Game Mechanics:** Decided that the game will use a scenario-based narrative approach where users make choices and see immediate consequences.
+* **Development Stack:** Agreed to use standard web technologies for early prototyping, with GitHub serving as the central version control and collaboration platform.
+* **Role Confirmation:** Formally approved the team roles listed in the attendance section above.
+
+---
+
+## Action Items
+
+* **Shalu Tamang**
+    * Conduct initial research on common phishing tactics targeting students and draft preliminary content ideas.
+* **Prajwal Shahi**
+    * Create a rough concept map and initial user flow diagrams for the game layout.
+* **Amrit Sharma**
+    * Initialize the GitHub repository, configure access permissions for all members, and upload a basic `.gitignore` and `README.md`.
+* **Manish Thapa**
+    * Set up communication channels (e.g., Discord/Slack) and establish a shared drive for project documentation.
+* **Sujal Pathak**
+    * Draft the meeting agenda for Week 2 and prepare the schedule timeline for the upcoming design phase.
+
+---
+
+## Next Steps
+1. **Repository Verification:** All team members must successfully clone the newly created GitHub repository before the next session.
+2. **Scenario Ideation:** Each member should think of 2-3 real-world phishing scenarios to bring to the next meeting for review.
+3. **Week 2 Prep:** Prepare to lock down the core game storyboard during the next workshop.
