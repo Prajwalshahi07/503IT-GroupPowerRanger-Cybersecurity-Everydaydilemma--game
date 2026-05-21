@@ -1,82 +1,39 @@
-# 503IT-GroupPowerRanger-Cybersecurity-Everydaydilemma--game
-
-
 Project Overview
-
-We are tasked with working as part of a professional development team to create a working game prototype that delivers educational awareness around a contemporary cybersecurity and digital safety issue.
-
-The game is designed for university students aged 18–25 and aims to be accessible, engaging, and educational while demonstrating a clear understanding of cyber phishing attacks.
-
+We are working as part of a professional development team to create a functional game prototype that raises educational awareness about contemporary cybersecurity and digital safety issues. The game is targeted at university students aged 18–25, aiming to be accessible, engaging, and informative while providing a clear understanding of cyber phishing attacks.
 Development Team Roles
-Team Member	Role
-Shalu Thamang	Group Leader & Coordinator
-Amrit Sharma	GitHub Lead & Prototype Developer
-Prajwal Shahi	Research Lead & Game Designer
-Manish Thapa	Project Coordinator
-Sujal Pathak	Timekeeper & Deadline Manager
+
+Shalu Thamang – Group Leader & Coordinator
+Amrit Sharma – GitHub Lead & Prototype Developer
+Prajwal Shahi – Research Lead & Game Designer
+Manish Thapa – Project Coordinator
+Sujal Pathak – Timekeeper & Deadline Manager
+Ashika Rai - Research Coordinator
+
 Day 1 Progress
-
-On the first day of development, the team discussed and finalized several important aspects of the project, including:
-
-Game title
-Cyber awareness topic
-Game scenarios
-Core game concept
-Storyboard ideas
-Learning objectives
-Target audience
-
-After discussion, the team decided to focus on cyber phishing awareness as the main educational topic of the game.
-
+During the first day, the team discussed and finalized key project elements, including the game title, cybersecurity topic, game scenarios, core concept, storyboard ideas, learning objectives, and target audience. After thorough discussion, the team selected cyber phishing awareness as the central educational focus.
 Game Concept
-
-The main protagonist of the game is an international university student living abroad alone. The story focuses on the challenges students face online and teaches players how to recognize and avoid phishing attacks.
-
-The game uses interactive decision-making scenarios where players must choose safe actions when faced with suspicious digital activity.
-
+The protagonist is an international university student living abroad alone. The narrative highlights common online challenges faced by students and teaches players how to identify and avoid phishing attacks through interactive decision-making scenarios.
 Example Scenario
-
-The player receives an email that appears to come from the university administration. The email states:
-
-“Your assignment submission has failed due to a technical issue. Click the link below to resubmit your assignment. If you do not submit the assignment by tonight, your visa will be cancelled and you may be forced to leave the country.”
-
-The player is then presented with two choices:
-
-Option 1
-
-Click the provided link and enter the university username and password.
-
-Option 2
-
-Ignore the email, visit the official university w tebsite, and report the suspicious message tohe university.
-
+The player receives a suspicious email that appears to be from the university administration:
+“Your assignment submission has failed due to a technical issue. Click the link below to resubmit your assignment. If you do not submit by tonight, your visa will be cancelled and you may be forced to leave the country.”
+The player must then choose between:
+Option 1: Click the link and enter university username and password.
+Option 2: Ignore the email, visit the official university website directly, and report the suspicious message.
 Gameplay and Scoring System
-
-The game includes a scoring system based on the player’s decisions.
-
-Safe cybersecurity choices will award points.
-Unsafe actions will deduct points from the total score.
-
-The player’s final score determines the outcome of the semester.
-
+The game features a points-based scoring system. Safe cybersecurity decisions award points, while risky actions deduct points. The final score determines the outcome of the student’s semester.
 Winning Condition
-If the player scores 80 points or higher, they successfully pass the semester.
-Lower scores may result in negative consequences within the game, such as account compromise or academic issues.
+Scoring 80 points or higher allows the player to successfully pass the semester. Lower scores result in negative in-game consequences such as account compromise or academic setbacks.
 Educational Objectives
-
-The game aims to help students:
+The game helps students:
 
 Identify phishing emails
 Recognize social engineering tactics
 Verify suspicious links and messages
 Practice safe online behavior
-Understand the consequences of sharing personal information online
+Understand the real-world consequences of sharing personal information online
 
-on the second session the team looked on the UX of the different games related to cyber awareness and to get some ideas for the project. 
-we agreed on using cyber military theme inspired form cybermission, visual symbols from prodigy education and high contrast colors from cyberedu game. 
-we updated our canvas and storyboard inspired by the UX of the games we looked at earlier.
-
-on the week 2 second day the team looked on to the prototype of game like animation first welcone frame or page with 
-game heading logo with the 3 icons that is how to play game instruction , start game and score and feed back .
-them the team created game instruction with proper animation and everything .
-
+Session 2: UX Research and Design Inspiration
+In the second session, the team conducted a detailed review of the user experience (UX) of existing cyber awareness games to gather ideas and best practices. The team agreed on a cyber military theme inspired by CyberMission, combined with clear visual symbols from Prodigy Education and high-contrast colors drawn from CyberEdu. The project canvas and storyboard were updated accordingly, incorporating the UX strengths observed from these reference games.
+Week 2 – Prototype Development Progress
+On the second day of Week 2, the team focused on building the initial game prototype. They designed and animated the welcome screen, featuring the game title, logo, and three prominent icons/buttons: “How to Play” (instructions), “Start Game,” and “Score & Feedback.”
+Following this, the team developed a complete, animated game instructions section. The instructions were designed with smooth animations, clear step-by-step guidance, and engaging visuals to ensure players fully understand the gameplay mechanics and learning goals before beginning.
