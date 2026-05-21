@@ -1,0 +1,10 @@
+Hello everyone, my name is Sujal, and today I will present our Week 3 progress update for our game called Everyday Dilemma.
+Our game is designed for university students aged 18 to 25 years old to help them learn about cyber-safety through interactive decision-making.
+The current prototype includes an animated welcome screen and three realistic scam scenarios that students may face online.
+These scenarios include a fake homework re-upload email scam, a fake IT support pop-up asking for login details, and an urgent bank alert text message scam.
+This week, we improved the structure of our project by separating the layout, design, and game logic into organized files for easier development.
+We also added educational feedback that explains why an answer is correct or unsafe, along with a live scoreboard to track player progress.
+Our testing results showed that the main interactions, gameplay choices, and score counters are all working successfully.
+However, feedback from other groups helped us identify a text wrapping issue that affects the display on smaller mobile screens.
+All of our work and evidence have been uploaded to GitHub under the folders Week-3-Development-Testing, Week-3-Appendix-Planning, and Peer-Feedback.
+Before Week 4, our team plans to fix the mobile display issue, add more cyber-safety challenges, and continue preparing for our final presentation together.
