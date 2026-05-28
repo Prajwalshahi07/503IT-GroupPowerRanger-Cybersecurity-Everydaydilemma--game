@@ -1,0 +1,33 @@
+Individual Contribution Log - Week 4
+Student Name: Manish Thapa  
+Student ID: 16082539  
+Role: Minute-taker / Documentation and Presentation Support  
+
+Tasks Completed This Week (Focus Date: 28/05/2026)
+
+1. Documented Meeting 06 Minutes
+Action: Acted as minute-taker during our 8-hour university workshop session. 
+Details: Recorded the structural code changes, runtime bug allocations (back-button score variable fix), 
+and deployment schedules.
+GitHub Evidence Committed `Week-4-Final-Game-Completion/meeting-06-minutes.md`.
+
+2. Maintained Academic Integrity Tracking (AI Use Log)
+Action: Collected documentation metrics from group members using AI assistance tools.
+Details: Evaluated Grok and ChatGPT generations for slide layouts and progress summary text adjustments. 
+Maintained compliance with the core team parameters.
+GitHub Evidence: Maintained and updated `AI-Use-Evidence/ai-use-log.md`.
+
+3. Presentation Infrastructure Layout
+Action: Built out the initial presentation architecture.
+Details: Planned the slide structure into a 10-part format, engineering distinct speaking tracks for all
+6 group members to satisfy strict 15-minute timing constraints.
+
+4. Prepared Individual Report Framework for Next Week
+Action: Formulated structural headers and collected baseline evidence hooks ahead of the Week 5 individual reporting shift.
+Details: Mapped out personal commit tags and documentation assets to serve as Appendix metrics.
+
+---
+
+Next Planned Actions
+Collaborate with Sujal to coordinate slide design validation once the core codebase freeze is finalized.
+Assemble independent peer feedback reviews into the central repository timeline.
