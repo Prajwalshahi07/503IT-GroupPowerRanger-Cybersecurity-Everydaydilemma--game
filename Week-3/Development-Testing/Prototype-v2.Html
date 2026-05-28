@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2.8">
+  <title>Everyday Dilemma • Phishing Awareness</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ==================== 1. COLOR VARIABLES ==================== */
+    :root {
+      --navy: #0A1F3D;
+      --purple: #6A0DAD;
+      --neon: #00FF9F;
+      --accent: #FF00AA;
+    }
+    /* ==================== 2. GLOBAL STYLES ==================== */
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(180deg, #0A1F3D 0%, #1A0033 100%);
+      color: #e0e0ff;
+      min-height: 100vh;
+      background-image:
+        linear-gradient(rgba(0,255,159,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,159,0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .container {
+      max-width: 1607px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /* ==================== 3. MAIN GAME CONTAINER (HUD) ==================== */
+    .hud {
+      background: rgba(10,31,61,0.95);
+      border: 3px solid var(--neon);
+      box-shadow: 0 0 30px rgba(0,255,159,0.4);
+      border-radius: 24px;
+      padding: 35px 25px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .neon-text {
+      text-shadow: 0 0 15px var(--neon), 0 0 30px var(--accent);
+    }
+    /* ==================== Existing styles (unchanged) ==================== */
+    .cyber-logo { width: 260px; height: 300px; margin: 10px auto 20px; position: relative; }
+    .shield {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #8A2BE2, #00BFFF, #6A0DAD);
+      clip-path: polygon(50% 8%, 90% 25%, 90% 70%, 50% 95%, 10% 70%, 10% 25%);
+      border: 10px solid #00ffff;
+      box-shadow: 0 0 60px #00ffff, inset 0 0 40px rgba(255,255,255,0.4);
+      animation: shield-glow 3s ease-in-out infinite alternate;
+      position: relative;
+    }
+    .shield::before {
+      content: "📧";
+      font-size: 110px;
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+      text-shadow: 0 0 30px #00ffff;
+      z-index: 2;
+    }
+    .hook {
+      position: absolute;
+      top: 22%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 65px;
+      color: #fff;
+      text-shadow: 0 0 25px #ffff00;
+      z-index: 3;
+    }
+    @keyframes shield-glow {
+      from { filter: drop-shadow(0 0 30px #8A2BE2); }
+      to { filter: drop-shadow(0 0 70px #00ffff); }
+    }
+    .character {
+      display: inline-block;
+      margin: 10px 0 15px;
+      animation: bob 3s ease-in-out infinite;
+      transition: transform 0.4s;
+      cursor: pointer;
+      max-width: 340px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 255, 159, 0.5);
+    }
+    .character:hover {
+      animation: worried 0.6s ease-in-out;
+      transform: scale(1.06) rotate(-4deg);
+    }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    @keyframes worried { 0%,100% { transform: rotate(-4deg) scale(1.06); } 50% { transform: rotate(4deg) scale(1.06); } }
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 15px 0;
+      padding: 18px;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 3px solid var(--neon);
+      color: var(--neon);
+      background: transparent;
+      border-radius: 16px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: var(--neon);
+      color: #0A1F3D;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--neon);
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--purple), var(--accent));
+      border: none;
+      color: white;
+    }
+    .hidden { display: none !important; }
+    /* ==================== MISSION HUB STYLES ==================== */
+    .mission-card {
+      background: rgba(255,255,255,0.06);
+      border: 2px solid #555;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      text-align: left;
+    }
+    .mission-card.unlocked {
+      border-color: var(--neon);
+      background: rgba(0,255,159,0.1);
+    }
+    .mission-card.locked {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .mission-card .status {
+      font-size: 1.4rem;
+    }
+    /* ==================== NEW GAME SCENARIO STYLES ==================== */
+    .scenario-screen {
+      display: none;
+    }
+    .message-box {
+      background: #111;
+      border: 2px solid #00FF9F;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 20px 0;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      overflow: hidden;
+    }
+    .message-box img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 3px solid #00FF9F;
+      box-shadow: 0 0 20px rgba(0,255,159,0.5);
+    }
+    .red-flag { color: #FF00AA; font-weight: bold; text-decoration: underline wavy; }
+    .choices button {
+      width: 100%;
+      margin: 12px 0;
+      padding: 18px;
+      font-size: 1.15rem;
+      text-align: left;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid #555;
+      color: #e0e0ff;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .choices button:hover {
+      border-color: var(--neon);
+      background: rgba(0,255,159,0.1);
+    }
+    .feedback {
+      margin: 25px 0;
+      padding: 20px;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      display: none;
+    }
+    .green { background: rgba(0,255,100,0.15); border: 3px solid #00ff66; }
+    .red { background: rgba(255,80,80,0.15); border: 3px solid #ff3366; }
+    .yellow{ background: rgba(255,200,50,0.15); border: 3px solid #ffcc00; }
+    /* ==================== POP-UP ANIMATION FOR HOW TO PLAY ==================== */
+    .step {
+      text-align: left;
+      background: rgba(255,255,255,0.06);
+      padding: 18px 20px;
+      margin: 15px 0;
+      border-radius: 16px;
+      border-left: 6px solid var(--neon);
+      font-size: 1.05rem;
+      line-height: 1.5;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+    .step.visible {
+      opacity: 1;
+      transform: scale(1);
+      animation: popIn 0.6s ease forwards;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.6); opacity: 0; }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    /* ==================== REGISTRATION PAGE STYLES (new, but matches theme) ==================== */
+    .registration-input {
+      width: 100%;
+      padding: 18px;
+      font-size: 1.2rem;
+      background: #111;
+      border: 3px solid var(--neon);
+      color: #e0e0ff;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    .registration-input:focus {
+      box-shadow: 0 0 20px var(--neon);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ==================== REGISTRATION PAGE (added before welcome page) ==================== -->
+    <div id="registrationPage">
+      <div class="hud">
+        <div class="cyber-logo">
+          <div class="shield">
+            <div class="hook">🪝</div>
+          </div>
+        </div>
+        <h1 class="neon-text" style="font-size: 2.8rem;">REGISTER TO BEGIN</h1>
+        <p style="color: var(--neon); font-size: 1.5rem; margin: 8px 0 20px;">
+          PHISHING AWARENESS MISSION
+        </p>
+        <p style="color: #aaa; margin-bottom: 30px;">Coventry University • Secure Your Semester</p>
+       
+        <div style="max-width: 420px; margin: 0 auto; text-align: left;">
+          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd;">👤 Username</label>
+          <input id="usernameInput" type="text" class="registration-input" placeholder="e.g. AlexStudent" maxlength="20">
+         
+          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd; margin-top: 15px;">🎂 Age</label>
+          <input id="ageInput" type="number" class="registration-input" placeholder="18" min="16" max="100">
+        </div>
+        <div style="margin: 40px 0 10px;">
+          <button onclick="registerAndStart()" class="btn btn-primary">
+            <i class="fas fa-user-check"></i> REGISTER &amp; START MISSION
+          </button>
+        </div>
+       
+        <p style="font-size: 0.95rem; color: #777; margin-top: 20px;">
+          Your data is only used for this session • No personal info is stored
+        </p>
+      </div>
+    </div>
+    <!-- ==================== WELCOME PAGE (unchanged) ==================== -->
+    <div id="welcomePage">
+      <div class="hud">
+        <div class="cyber-logo">
+          <div class="shield">
+            <div class="hook">🪝</div>
+          </div>
+        </div>
+        <h1 class="neon-text" style="font-size: 2.8rem;">EVERYDAY DILEMMA</h1>
+        <p style="color: var(--neon); font-size: 1.5rem; margin: 8px 0 10px;">
+          PHISHING AWARENESS MISSION
+        </p>
+        <p style="color: #aaa;">Coventry University</p>
+      
+        <img id="characterImg"
+             src="https://www.independentcottages.co.uk/holiday-blog/wp-content/uploads/2015/04/phishing.jpg"
+             class="character"
+             title="Phishing Awareness Cartoon"
+             alt="Cartoon student on laptop being phished by a hacker with a fishing rod"
+             onerror="this.onerror=null; this.src='https://via.placeholder.com/340x280/1A0033/00FF9F?text=IMAGE+NOT+FOUND';">
+        <div style="margin: 20px 0; font-size: 1.2rem;">
+          <p><strong>Welcome, Alex!</strong></p>
+          <p>Don’t let phishing ruin your semester.</p>
+        </div>
+ 
+        <button onclick="showHowToPlay()" class="btn">
+          <i class="fas fa-info-circle"></i> HOW TO PLAY
+        </button>
+        <button onclick="startGame()" class="btn btn-primary">
+          <i class="fas fa-play"></i> START GAME
+        </button>
+        <button onclick="showScoreFeedback()" class="btn">
+          <i class="fas fa-trophy"></i> SCORE &amp; FEEDBACK
+        </button>
+      </div>
+    </div>
+    <!-- ==================== HOW TO PLAY PAGE (NOW WITH POP-UP EVERY 2 SECONDS) ==================== -->
+    <div id="howToPlayPage" class="hidden">
+      <div class="hud">
+        <h2 class="neon-text" style="font-size: 2.4rem; margin-bottom: 25px;">HOW TO PLAY</h2>
+      
+        <div class="step" id="step1"><strong>Step 1: Read the Scenario Carefully</strong><br>There are <strong>3 real-life scenarios</strong> (Email &amp; SMS) that Coventry University students commonly receive.</div>
+        <div class="step" id="step2"><strong>Step 2: Choose the Best Action</strong><br>You will be given <strong>3 options</strong>. Choose the safest action to avoid the phishing attack.</div>
+        <div class="step" id="step3"><strong>Step 3: Earn Points + Get Feedback</strong><br>• +25 points for the correct/safe choice<br>• -5 to -25 points for risky or wrong choices<br>You will receive instant feedback explaining the phishing red flags.</div>
+        <div class="step" id="step4"><strong>Step 4: Learn &amp; Level Up</strong><br>Master the 3 key phishing red flags and improve your “Semester Health” score.<br>Complete all missions to earn your <strong>Phishing Defender Certificate</strong>.</div>
+        <div style="margin-top: 40px;">
+          <button onclick="showWelcome()" class="btn">← BACK TO WELCOME</button>
+          <button onclick="startGame()" class="btn btn-primary"><i class="fas fa-play"></i> START MISSION 01</button>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== MISSION HUB ==================== -->
+    <div id="missionHub" class="hidden">
+      <div class="hud">
+        <h1 class="neon-text" style="font-size: 2.6rem; margin-bottom: 10px;">MISSION HUB</h1>
+        <p style="color: var(--neon); font-size: 1.4rem;">Complete missions in order to unlock the next</p>
+        <div class="mission-card unlocked">
+          <div>
+            <strong>Mission 1</strong><br>
+            Urgent Assignment Re-upload Scam
+          </div>
+          <div class="status" style="color:#00FF9F;">✅ UNLOCKED</div>
+        </div>
+        <div class="mission-card locked">
+          <div>
+            <strong>Mission 2</strong><br>
+            Fake IT Support Password Reset
+          </div>
+          <div class="status">🔒 LOCKED</div>
+        </div>
+        <div class="mission-card locked">
+          <div>
+            <strong>Mission 3</strong><br>
+            Fake Tuition Fee Refund Scam
+          </div>
+          <div class="status">🔒 LOCKED</div>
+        </div>
+        <button onclick="startMission1()" class="btn btn-primary" style="margin-top: 30px;">
+          <i class="fas fa-play"></i> PLAY MISSION 1
+        </button>
+        <button onclick="backToWelcome()" class="btn">
+          ← Back to Welcome
+        </button>
+      </div>
+    </div>
+    <!-- ==================== GAME SCENARIOS (with new bottom buttons) ==================== -->
+    <div id="gameScreen" class="scenario-screen">
+      <div class="hud">
+        <h2 id="missionHeader" class="neon-text" style="font-size: 2.2rem; margin-bottom: 8px;"></h2>
+        <p><strong>Score: <span id="currentScore">0</span> / 100</strong></p>
+        <div class="message-box" id="scenarioMessage"></div>
+        <h3 style="margin:20px 0 10px;">What will you do?</h3>
+        <div class="choices" id="choicesContainer"></div>
+        <div id="feedbackBox" class="feedback"></div>
+        <button id="nextBtn" class="btn btn-primary hidden" onclick="nextMission()">NEXT MISSION →</button>
+        <!-- NEW BOTTOM BUTTONS -->
+        <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center;">
+          <button onclick="backToPreviousMission()" class="btn" style="flex: 1; max-width: 280px;">
+            ← Back to Previous Mission
+          </button>
+          <button onclick="backToWelcome()" class="btn" style="flex: 1; max-width: 280px;">
+            ← Back to Welcome Page
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // ==================== REGISTRATION DATA (new) ====================
+    let currentUser = { username: '', age: 0 };
+    function registerAndStart() {
+      const usernameInput = document.getElementById('usernameInput').value.trim();
+      const ageInput = parseInt(document.getElementById('ageInput').value);
+      if (!usernameInput) {
+        alert("⚠️ Please enter a username to continue!");
+        return;
+      }
+      if (isNaN(ageInput) || ageInput < 16 || ageInput > 100) {
+        alert("⚠️ Please enter a valid age between 16 and 100!");
+        return;
+      }
+      currentUser.username = usernameInput;
+      currentUser.age = ageInput;
+      // Update welcome message dynamically (without changing original HTML)
+      const welcomeStrong = document.querySelector('#welcomePage strong');
+      if (welcomeStrong) {
+        welcomeStrong.textContent = `Welcome, ${usernameInput}!`;
+      }
+      // Hide registration and show welcome page
+      document.getElementById('registrationPage').classList.add('hidden');
+      document.getElementById('welcomePage').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+    // ==================== GAME DATA ====================
+    let currentMission = 0;
+    let totalScore = 0;
+    const missions = [
+      { message: `<img src="https://cdn.leonardo.ai/users/aba2fe2f-137c-45e6-a86b-916dee3d7abd/generations/1f15505f-af03-6640-b5eb-7c5427fc8176/gemini-2.5-flash-image_Edit_the_provided_image_to_look_highly_realistic._Keep_the_original_scene_lighti-1.jpg" alt="Mission 1">` },
+      { message: `<img src="https://cdn.leonardo.ai/users/aba2fe2f-137c-45e6-a86b-916dee3d7abd/generations/1f1550a0-bfa8-6f40-b51f-7cd61ab6e084/gemini-2.5-flash-image_Edit_the_original_image_by_adding_two_realistic_UI_overlays_Left_side_upper-left-1.jpg" alt="Mission 2">` },
+      { message: `<img src="https://cdn.leonardo.ai/users/aba2fe2f-137c-45e6-a86b-916dee3d7abd/generations/1f155161-4e1c-6d60-991d-e357fbb84d63/gemini-2.5-flash-image_Edit_the_original_image_by_adding_two_realistic_UI_overlays_Left_side_upper-left-1.jpg" alt="Mission 3">` }
+    ];
+    // ==================== NAVIGATION ====================
+    function startGame() {
+      document.getElementById('welcomePage').classList.add('hidden');
+      document.getElementById('howToPlayPage').classList.add('hidden');
+      document.getElementById('missionHub').classList.remove('hidden');
+    }
+    function startMission1() {
+      document.getElementById('missionHub').classList.add('hidden');
+      document.getElementById('gameScreen').style.display = 'block';
+      currentMission = 0;
+      totalScore = 0;
+      loadMission();
+    }
+    function loadMission() {
+      const m = missions[currentMission];
+      document.getElementById('missionHeader').textContent = `Mission ${currentMission + 1}`;
+      document.getElementById('scenarioMessage').innerHTML = m.message;
+      document.getElementById('currentScore').textContent = totalScore;
+      const container = document.getElementById('choicesContainer');
+      container.innerHTML = '';
+      let choicesData = [];
+      if (currentMission === 0) {
+        choicesData = [
+          { text: "Click the link and re-upload immediately", points: -15, type: "red", feedback: "Login credentials stolen. Fake site captured your university password." },
+          { text: "Open official Turnitin website yourself and check status", points: 30, type: "green", feedback: "✅ Correct! Always go directly to official sites." },
+          { text: "Reply asking for clarification", points: -5, type: "yellow", feedback: "Replying confirms your active email to scammers." }
+        ];
+      } else if (currentMission === 1) {
+        choicesData = [
+          { text: "Click the link and reset password", points: -20, type: "red", feedback: "Account fully compromised." },
+          { text: "Go directly to official Coventry IT portal", points: 30, type: "green", feedback: "✅ Perfect! Never click links in emails." },
+          { text: "Ignore the email", points: -5, type: "yellow", feedback: "Risky — better to verify." }
+        ];
+      } else if (currentMission === 2) {
+        choicesData = [
+          { text: "Click the link and enter bank details", points: -25, type: "red", feedback: "Banking information stolen." },
+          { text: "Check official university finance portal directly", points: 35, type: "green", feedback: "✅ Excellent! Always verify through official channels." },
+          { text: "Reply to the SMS", points: -5, type: "yellow", feedback: "Your number is now confirmed active." }
+        ];
+      }
+      choicesData.forEach((choice, i) => {
+        const btn = document.createElement('button');
+        btn.textContent = `${String.fromCharCode(65 + i)}. ${choice.text}`;
+        btn.onclick = () => handleChoice(i, choice);
+        container.appendChild(btn);
+      });
+      document.getElementById('feedbackBox').style.display = 'none';
+      document.getElementById('nextBtn').classList.add('hidden');
+    }
+    function handleChoice(index, choice) {
+      totalScore += choice.points;
+      if (totalScore < 0) totalScore = 0;
+      document.getElementById('currentScore').textContent = totalScore;
+      const fb = document.getElementById('feedbackBox');
+      fb.className = `feedback ${choice.type}`;
+      fb.innerHTML = `<strong>${choice.type === 'green' ? '✅ SAFE MOVE' : choice.type === 'red' ? '❌ COMPROMISED' : '⚠️ RISKY'}</strong><br><br>
+                      ${choice.feedback}<br><br>
+                      <em>Red flags: fake domain, urgency, suspicious link</em>`;
+      fb.style.display = 'block';
+      document.getElementById('choicesContainer').innerHTML = '';
+      document.getElementById('nextBtn').classList.remove('hidden');
+    }
+    function nextMission() {
+      currentMission++;
+      if (currentMission < 3) loadMission();
+      else showFinalEnding();
+    }
+    function backToPreviousMission() {
+      if (currentMission > 0) {
+        currentMission--;
+        loadMission();
+      }
+    }
+    function showFinalEnding() {
+      const gameScreen = document.getElementById('gameScreen');
+      gameScreen.innerHTML = `
+        <div class="hud">
+          <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px;">
+            ${totalScore >= 80 ? '🎉 SAFE SEMESTER ACHIEVED!' : totalScore >= 50 ? '😟 STRESSFUL SEMESTER' : '💥 SEMESTER COMPROMISED'}
+          </h1>
+          <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 100</strong></p>
+          ${totalScore >= 80 ?
+            '<p style="color:#00ff88; font-size:1.4rem;">You are now a certified Phishing Defender!<br>Well done, Alex!</p>' :
+            '<p>Review the red flags and play again to improve your score.</p>'}
+          <button onclick="backToWelcome()" class="btn btn-primary" style="margin-top:30px; padding:20px 40px; font-size:1.3rem;">
+            ← BACK TO WELCOME PAGE
+          </button>
+        </div>`;
+    }
+    function backToWelcome() {
+      document.getElementById('registrationPage').classList.add('hidden');
+      document.getElementById('welcomePage').classList.remove('hidden');
+      document.getElementById('howToPlayPage').classList.add('hidden');
+      document.getElementById('missionHub').classList.add('hidden');
+      // Restore original game screen content so replay works perfectly
+      document.getElementById('gameScreen').innerHTML = `
+        <div class="hud">
+          <h2 id="missionHeader" class="neon-text" style="font-size: 2.2rem; margin-bottom: 8px;"></h2>
+          <p><strong>Score: <span id="currentScore">0</span> / 100</strong></p>
+          <div class="message-box" id="scenarioMessage"></div>
+          <h3 style="margin:20px 0 10px;">What will you do?</h3>
+          <div class="choices" id="choicesContainer"></div>
+          <div id="feedbackBox" class="feedback"></div>
+          <button id="nextBtn" class="btn btn-primary hidden" onclick="nextMission()">NEXT MISSION →</button>
+          <!-- NEW BOTTOM BUTTONS -->
+          <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center;">
+            <button onclick="backToPreviousMission()" class="btn" style="flex: 1; max-width: 280px;">
+              ← Back to Previous Mission
+            </button>
+            <button onclick="backToWelcome()" class="btn" style="flex: 1; max-width: 280px;">
+              ← Back to Welcome Page
+            </button>
+          </div>
+        </div>`;
+      document.getElementById('gameScreen').style.display = 'none';
+      window.scrollTo(0, 0);
+    }
+    // ==================== HOW TO PLAY POP-UP (2-second gaps) ====================
+    function showHowToPlay() {
+      document.getElementById('welcomePage').classList.add('hidden');
+      document.getElementById('howToPlayPage').classList.remove('hidden');
+      window.scrollTo(0, 0);
+      animateSteps();
+    }
+    function animateSteps() {
+      const steps = [
+        document.getElementById('step1'),
+        document.getElementById('step2'),
+        document.getElementById('step3'),
+        document.getElementById('step4')
+      ];
+      steps.forEach(s => s.classList.remove('visible'));
+      let delay = 500;
+      steps.forEach((step, i) => {
+        setTimeout(() => {
+          step.classList.add('visible');
+        }, delay);
+        delay += 2000; // 2-second gap between each pop-up
+      });
+    }
+    // ==================== EXISTING FUNCTIONS ====================
+    function showWelcome() {
+      document.getElementById('howToPlayPage').classList.add('hidden');
+      document.getElementById('welcomePage').classList.remove('hidden');
+    }
+    function showScoreFeedback() {
+      alert("Score & Feedback page coming soon!");
+    }
+    // ==================== INITIAL LOAD (updated to show registration first) ====================
+    window.addEventListener('load', () => {
+      // Show registration page first (everything else hidden)
+      document.getElementById('welcomePage').classList.add('hidden');
+      document.getElementById('howToPlayPage').classList.add('hidden');
+      document.getElementById('missionHub').classList.add('hidden');
+      document.getElementById('gameScreen').style.display = 'none';
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+</html>
