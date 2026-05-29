@@ -10,17 +10,12 @@ The project was built using HTML for structure, CSS for styling and animations, 
 
 # Development Team
 
-Shalu Thamang – Group Leader & Coordinator.
-
-Amrit Sharma – GitHub Lead & Prototype Developer.
-
-Prajwal Shahi – Research Lead & Game Designer.
-
-Manish Thapa – Project Coordinator.
-
-Sujal Pathak – Timekeeper & Deadline Manager.
-
-Ashika Rai – Research Coordinator.
+* **Shalu Thamang** – Group Leader & Coordinator
+* **Amrit Sharma** – GitHub Lead & Prototype Developer
+* **Prajwal Shahi** – Research Lead & Game Designer
+* **Manish Thapa** – Project Coordinator
+* **Sujal Pathak** – Timekeeper & Deadline Manager
+* **Ashika Rai** – Research Coordinator
 
 ---
 
@@ -36,11 +31,29 @@ The educational objective of the game was designed to help students recognise ph
 
 ---
 
-# Session 2 – UX Research & Design Inspiration
+# week 2 – UX Research & Design Inspiration
 
 In the second session, the team conducted research into existing cybersecurity awareness games to improve the project’s user experience and visual design. Inspiration was taken from games such as CyberMission, Prodigy Education, and CyberEdu. From these references, the team adopted a cyber military atmosphere, clearer visual indicators, and high-contrast colour schemes to improve engagement and accessibility.
 
 This research helped shape the game’s final cyberpunk neon theme, which became the consistent visual style across all pages and gameplay sections. The storyboard and project canvas were also updated to reflect the improved user interface and gameplay flow.
+
+---
+
+# Week 2 – Tool Selection & Technology Research
+
+During Week 2, the team researched and evaluated different development tools and technologies to determine which platforms would be most suitable for building the cybersecurity awareness game. The team compared HTML/CSS/JavaScript, Canvas, and Scratch by analysing their strengths, limitations, realism, usability, and suitability for the target audience.
+
+The first tool evaluated was HTML, CSS, and JavaScript. The team identified this combination as highly suitable for building web page structures, interactive gameplay systems, phishing email simulations, login interfaces, and realistic university-style web pages. One of the main strengths of HTML-based development was that the game could run directly in a browser without requiring additional software downloads. The combination of CSS styling and JavaScript interactivity also allowed the team to create engaging user interfaces and realistic phishing simulations familiar to university students. However, the team noted that larger projects would require careful organisation and that advanced visual designs could become complex using CSS alone.
+
+The second tool researched was Canvas. The team explored Canvas because of its ability to support smooth 2D animations, transitions, score systems, progress bars, and interactive visual feedback. Canvas was considered useful for creating immersive cybersecurity-themed environments and improving player engagement through dynamic movement and animations. Despite these strengths, the team recognised that Canvas development would require significantly more JavaScript coding and development time. Since the project timeline was limited, Canvas was considered less practical as the primary development tool.
+
+The team also reviewed Scratch as an optional tool for rapid educational game prototyping. Scratch offered simple drag-and-drop programming and beginner-friendly development, making it easy to learn quickly. However, the team concluded that Scratch lacked the advanced functionality and professional appearance needed to create realistic phishing simulations and immersive university-style interfaces suitable for the target audience.
+
+After evaluating all three tools, the team concluded that HTML, CSS, and JavaScript were the most realistic and effective technologies for the project. These tools matched the target audience well because university students are already familiar with websites, emails, login systems, and online interfaces. HTML also allowed the team to efficiently build realistic phishing simulations while keeping development manageable within the available timeframe.
+
+The team further recognised that combining HTML with JavaScript and selected Canvas features would provide strong support for educational feedback systems such as score tracking, pop-up messages, progress indicators, and interactive responses. In addition, HTML, CSS, and JavaScript provided strong evidence of professional development work for GitHub through visible code commits, collaborative updates, and documented project progression.
+
+This research and tool selection process helped establish the technical foundation for the remainder of the project and guided the development of the final game prototype.
 
 ---
 
@@ -83,3 +96,4 @@ After debugging and refinement, the game was finalised successfully. The complet
 Everyday Dilemma successfully combines education, interactivity, and immersive visual design to create a functional cybersecurity awareness game prototype. The project highlights the importance of safe online behaviour while providing students with practical experience in recognising and responding to phishing attacks. Through teamwork, research, design, and development, the project achieved its goal of creating an informative and engaging learning experience for university students.
 
 ---
+
