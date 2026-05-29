@@ -262,7 +262,7 @@
           <input id="usernameInput" type="text" class="registration-input" placeholder="e.g. AlexStudent" maxlength="20">
       
           <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd; margin-top: 15px;">🎂 Age</label>
-          <input id="ageInput" type="number" class="registration-input" placeholder="18" min="16" max="100">
+          <input id="ageInput" type="number" class="registration-input" placeholder="18" min="16" max="50">
         </div>
         <div style="margin: 40px 0 10px;">
           <button onclick="registerAndStart()" class="btn btn-primary">
@@ -367,7 +367,7 @@
     <div id="gameScreen" class="scenario-screen">
       <div class="hud">
         <h2 id="missionHeader" class="neon-text" style="font-size: 2.2rem; margin-bottom: 8px;"></h2>
-        <p><strong>Score: <span id="currentScore">0</span> / 100</strong></p>
+        <p><strong>Score: <span id="currentScore">0</span> / 75</strong></p>
         <div class="message-box" id="scenarioMessage"></div>
         <h3 style="margin:20px 0 10px;">What will you do?</h3>
         <div class="choices" id="choicesContainer"></div>
@@ -415,7 +415,7 @@
       const usernameInput = document.getElementById('usernameInput').value.trim();
       const ageInput = parseInt(document.getElementById('ageInput').value);
       if (!usernameInput) { alert("⚠️ Please enter a username to continue!"); return; }
-      if (isNaN(ageInput) || ageInput < 16 || ageInput > 100) { alert("⚠️ Please enter a valid age between 16 and 100!"); return; }
+      if (isNaN(ageInput) || ageInput < 16 || ageInput > 50) { alert("⚠️ Please enter a valid age between 16 and 50!"); return; }
       currentUser.username = usernameInput;
       currentUser.age = ageInput;
       document.querySelector('#welcomePage strong').textContent = `Welcome, ${usernameInput}!`;
@@ -578,7 +578,7 @@
         endingHTML = `
           <div class="hud">
             <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px; color:#00ff88;">🎉 SAFE SEMESTER ACHIEVED!</h1>
-            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 100</strong></p>
+            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 75</strong></p>
             <p style="color:#00ff88; font-size:1.4rem;">You are now a certified Phishing Defender!<br>Well done, ${currentUser.username || 'Alex'}!</p>
             <button onclick="backToWelcome()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">← BACK TO WELCOME PAGE</button>
             <button onclick="playAgain()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">🔄 PLAY AGAIN</button>
@@ -587,7 +587,7 @@
         endingHTML = `
           <div class="hud">
             <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px; color:#ffcc00;">😟 STRESSFUL SEMESTER</h1>
-            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 100</strong></p>
+            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 75</strong></p>
             <p>You had some close calls. Review the red flags and try again!</p>
             <button onclick="backToWelcome()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">← BACK TO WELCOME PAGE</button>
             <button onclick="playAgain()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">🔄 PLAY AGAIN</button>
@@ -614,7 +614,7 @@
       gameScreen.innerHTML = `
         <div class="hud">
           <h2 id="missionHeader" class="neon-text" style="font-size: 2.2rem; margin-bottom: 8px;"></h2>
-          <p><strong>Score: <span id="currentScore">0</span> / 100</strong></p>
+          <p><strong>Score: <span id="currentScore">0</span> / 75</strong></p>
           <div class="message-box" id="scenarioMessage"></div>
           <h3 style="margin:20px 0 10px;">What will you do?</h3>
           <div class="choices" id="choicesContainer"></div>
@@ -640,7 +640,7 @@
       let summaryHTML = `<h2 style="color:var(--neon);">Latest Game Feedback</h2>`;
       if (completedGames.length > 0) {
         const latest = completedGames[completedGames.length - 1];
-        summaryHTML += `<p><strong style="font-size:1.4rem;">Game ${latest.gameNumber} — Final Score: ${latest.score}/100</strong></p>`;
+        summaryHTML += `<p><strong style="font-size:1.4rem;">Game ${latest.gameNumber} — Final Score: ${latest.score}/75</strong></p>`;
         summaryHTML += `<div style="margin-top:20px;">`;
         latest.history.forEach(entry => {
           summaryHTML += `
