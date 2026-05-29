@@ -11,7 +11,7 @@ Ashika Rai - Research Coordinator
 
 Day 1 Progress
 During the first day, the team discussed and finalized key project elements, including the game title, cybersecurity topic, game scenarios, core concept, storyboard ideas, learning objectives, and target audience. After thorough discussion, the team selected cyber phishing awareness as the central educational focus.
-Game Concept
+Game Concept 
 The protagonist is an international university student living abroad alone. The narrative highlights common online challenges faced by students and teaches players how to identify and avoid phishing attacks through interactive decision-making scenarios.
 Example Scenario
 The player receives a suspicious email that appears to be from the university administration:
@@ -22,7 +22,7 @@ Option 2: Ignore the email, visit the official university website directly, and 
 Gameplay and Scoring System
 The game features a points-based scoring system. Safe cybersecurity decisions award points, while risky actions deduct points. The final score determines the outcome of the student’s semester.
 Winning Condition
-Scoring 80 points or higher allows the player to successfully pass the semester. Lower scores result in negative in-game consequences such as account compromise or academic setbacks.
+Scoring 70 points or higher allows the player to successfully pass the semester. Lower scores result in negative in-game consequences such as account compromise or academic setbacks.
 Educational Objectives
 The game helps students:
 
@@ -34,6 +34,7 @@ Understand the real-world consequences of sharing personal information online
 
 Session 2: UX Research and Design Inspiration
 In the second session, the team conducted a detailed review of the user experience (UX) of existing cyber awareness games to gather ideas and best practices. The team agreed on a cyber military theme inspired by CyberMission, combined with clear visual symbols from Prodigy Education and high-contrast colors drawn from CyberEdu. The project canvas and storyboard were updated accordingly, incorporating the UX strengths observed from these reference games.
+
 Week 2 – Prototype Development Progress
 On the second day of Week 2, the team focused on building the initial game prototype. They designed and animated the welcome screen, featuring the game title, logo, and three prominent icons/buttons: “How to Play” (instructions), “Start Game,” and “Score & Feedback.”
 Following this, the team developed a complete, animated game instructions section. The instructions were designed with smooth animations, clear step-by-step guidance, and engaging visuals to ensure players fully understand the gameplay mechanics and learning goals before beginning.
