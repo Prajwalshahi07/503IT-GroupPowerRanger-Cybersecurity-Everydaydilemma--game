@@ -1,5 +1,8 @@
 **Tool 1: HTML / CSS / JavaScript**  
+
+
 What we could build with it:
+
 Web page structures and layouts
 Web-based games
 Phishing-style emails and login pages (simulation/educational use)
