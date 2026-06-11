@@ -56,7 +56,7 @@
       position: relative;
     }
     .shield::before {
-      content: "📧";
+      content: " ";
       font-size: 110px;
       position: absolute;
       top: 48%;
@@ -247,7 +247,7 @@
       <div class="hud">
         <div class="cyber-logo">
           <div class="shield">
-            <div class="hook">🪝</div>
+            <div class="hook"></div>
           </div>
         </div>
         <h1 class="neon-text" style="font-size: 2.8rem;">REGISTER TO BEGIN</h1>
@@ -257,10 +257,10 @@
         <p style="color: #aaa; margin-bottom: 30px;">Coventry University • Secure Your Semester</p>
        
         <div style="max-width: 420px; margin: 0 auto; text-align: left;">
-          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd;">👤 Username</label>
+          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd;"> Username</label>
           <input id="usernameInput" type="text" class="registration-input" placeholder="e.g. AlexStudent" maxlength="20">
          
-          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd; margin-top: 15px;">🎂 Age</label>
+          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd; margin-top: 15px;"> Age</label>
           <input id="ageInput" type="number" class="registration-input" placeholder="18" min="16" max="100">
         </div>
         <div style="margin: 40px 0 10px;">
@@ -279,7 +279,7 @@
       <div class="hud">
         <div class="cyber-logo">
           <div class="shield">
-            <div class="hook">🪝</div>
+            <div class="hook"></div>
           </div>
         </div>
         <h1 class="neon-text" style="font-size: 2.8rem;">EVERYDAY DILEMMA</h1>
@@ -335,21 +335,21 @@
             <strong>Mission 1</strong><br>
             Urgent Assignment Re-upload Scam
           </div>
-          <div class="status" style="color:#00FF9F;">✅ UNLOCKED</div>
+          <div class="status" style="color:#00FF9F;"> UNLOCKED</div>
         </div>
         <div class="mission-card locked">
           <div>
             <strong>Mission 2</strong><br>
             Fake IT Support Password Reset
           </div>
-          <div class="status">🔒 LOCKED</div>
+          <div class="status"> LOCKED</div>
         </div>
         <div class="mission-card locked">
           <div>
             <strong>Mission 3</strong><br>
             Fake Tuition Fee Refund Scam
           </div>
-          <div class="status">🔒 LOCKED</div>
+          <div class="status"> LOCKED</div>
         </div>
         <button onclick="startMission1()" class="btn btn-primary" style="margin-top: 30px;">
           <i class="fas fa-play"></i> PLAY MISSION 1
@@ -388,11 +388,11 @@
       const usernameInput = document.getElementById('usernameInput').value.trim();
       const ageInput = parseInt(document.getElementById('ageInput').value);
       if (!usernameInput) {
-        alert("⚠️ Please enter a username to continue!");
+        alert(" Please enter a username to continue!");
         return;
       }
       if (isNaN(ageInput) || ageInput < 16 || ageInput > 100) {
-        alert("⚠️ Please enter a valid age between 16 and 100!");
+        alert(" Please enter a valid age between 16 and 100!");
         return;
       }
       currentUser.username = usernameInput;
@@ -439,19 +439,19 @@
       if (currentMission === 0) {
         choicesData = [
           { text: "Click the link and re-upload immediately", points: -15, type: "red", feedback: "Login credentials stolen. Fake site captured your university password." },
-          { text: "Open official Turnitin website yourself and check status", points: 30, type: "green", feedback: "✅ Correct! Always go directly to official sites." },
+          { text: "Open official Turnitin website yourself and check status", points: 30, type: "green", feedback: " Correct! Always go directly to official sites." },
           { text: "Reply asking for clarification", points: -5, type: "yellow", feedback: "Replying confirms your active email to scammers." }
         ];
       } else if (currentMission === 1) {
         choicesData = [
           { text: "Click the link and reset password", points: -20, type: "red", feedback: "Account fully compromised." },
-          { text: "Go directly to official Coventry IT portal", points: 30, type: "green", feedback: "✅ Perfect! Never click links in emails." },
+          { text: "Go directly to official Coventry IT portal", points: 30, type: "green", feedback: " Perfect! Never click links in emails." },
           { text: "Ignore the email", points: -5, type: "yellow", feedback: "Risky — better to verify." }
         ];
       } else if (currentMission === 2) {
         choicesData = [
           { text: "Click the link and enter bank details", points: -25, type: "red", feedback: "Banking information stolen." },
-          { text: "Check official university finance portal directly", points: 35, type: "green", feedback: "✅ Excellent! Always verify through official channels." },
+          { text: "Check official university finance portal directly", points: 35, type: "green", feedback: " Excellent! Always verify through official channels." },
           { text: "Reply to the SMS", points: -5, type: "yellow", feedback: "Your number is now confirmed active." }
         ];
       }
@@ -493,7 +493,7 @@
       gameScreen.innerHTML = `
         <div class="hud">
           <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px;">
-            ${totalScore >= 80 ? '🎉 SAFE SEMESTER ACHIEVED!' : totalScore >= 50 ? '😟 STRESSFUL SEMESTER' : '💥 SEMESTER COMPROMISED'}
+            ${totalScore >= 80 ? ' SAFE SEMESTER ACHIEVED!' : totalScore >= 50 ? ' STRESSFUL SEMESTER' : ' SEMESTER COMPROMISED'}
           </h1>
           <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 100</strong></p>
           ${totalScore >= 80 ?
