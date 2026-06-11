@@ -56,7 +56,7 @@
       position: relative;
     }
     .shield::before {
-      content: "📧";
+      content: " ";
       font-size: 110px;
       position: absolute;
       top: 48%;
@@ -248,7 +248,7 @@
       <div class="hud">
         <div class="cyber-logo">
           <div class="shield">
-            <div class="hook">🪝</div>
+            <div class="hook"> </div>
           </div>
         </div>
         <h1 class="neon-text" style="font-size: 2.8rem;">REGISTER TO BEGIN</h1>
@@ -258,11 +258,11 @@
         <p style="color: #aaa; margin-bottom: 30px;">Coventry University • Secure Your Semester</p>
     
         <div style="max-width: 420px; margin: 0 auto; text-align: left;">
-          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd;">👤 Username</label>
+          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd;"> Username</label>
           <input id="usernameInput" type="text" class="registration-input" placeholder="e.g. AlexStudent" maxlength="20">
       
-          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd; margin-top: 15px;">🎂 Age</label>
-          <input id="ageInput" type="number" class="registration-input" placeholder="18" min="16" max="50">
+          <label style="display: block; margin-bottom: 8px; font-size: 1.1rem; color: #ddd; margin-top: 15px;"> Age</label>
+          <input id="ageInput" type="number" class="registration-input" placeholder="18" min="16" max="100">
         </div>
         <div style="margin: 40px 0 10px;">
           <button onclick="registerAndStart()" class="btn btn-primary">
@@ -281,7 +281,7 @@
       <div class="hud">
         <div class="cyber-logo">
           <div class="shield">
-            <div class="hook">🪝</div>
+            <div class="hook"></div>
           </div>
         </div>
         <h1 class="neon-text" style="font-size: 2.8rem;">EVERYDAY DILEMMA</h1>
@@ -319,7 +319,7 @@
   
         <div class="step" id="step1"><strong>Step 1: Read the Scenario Carefully</strong><br>There are <strong>3 real-life scenarios</strong> (Email &amp; SMS) that Coventry University students commonly receive.</div>
         <div class="step" id="step2"><strong>Step 2: Choose the Best Action</strong><br>You will be given <strong>3 options</strong>. Choose the safest action to avoid the phishing attack.</div>
-        <div class="step" id="step3"><strong>Step 3: Earn Points + Get Feedback</strong><br>• +25 points for the correct/safe choice<br>• -5 to -15 points for risky or wrong choices<br>You will receive instant feedback explaining the phishing red flags.</div>
+        <div class="step" id="step3"><strong>Step 3: Earn Points + Get Feedback</strong><br> +25 points for the correct/safe choice<br> -5 to -15 points for risky or wrong choices<br>You will receive instant feedback explaining the phishing red flags.</div>
         <div class="step" id="step4"><strong>Step 4: Learn &amp; Level Up</strong><br>Master the 3 key phishing red flags and improve your “Semester Health” score.<br>Complete all missions to earn your <strong>Phishing Defender Certificate</strong>.</div>
         <div style="margin-top: 40px;">
           <button onclick="showWelcome()" class="btn">← BACK TO WELCOME</button>
@@ -338,21 +338,21 @@
             <strong>Mission 1</strong><br>
             Urgent Assignment Re-upload Scam
           </div>
-          <div class="status" style="color:#00FF9F;">✅ UNLOCKED</div>
+          <div class="status" style="color:#00FF9F;"> UNLOCKED</div>
         </div>
         <div class="mission-card locked">
           <div>
             <strong>Mission 2</strong><br>
             Fake IT Support Password Reset
           </div>
-          <div class="status">🔒 LOCKED</div>
+          <div class="status"> LOCKED</div>
         </div>
         <div class="mission-card locked">
           <div>
             <strong>Mission 3</strong><br>
             Fake Tuition Fee Refund Scam
           </div>
-          <div class="status">🔒 LOCKED</div>
+          <div class="status"> LOCKED</div>
         </div>
         <button onclick="startMission1()" class="btn btn-primary" style="margin-top: 30px;">
           <i class="fas fa-play"></i> PLAY MISSION 1
@@ -367,7 +367,7 @@
     <div id="gameScreen" class="scenario-screen">
       <div class="hud">
         <h2 id="missionHeader" class="neon-text" style="font-size: 2.2rem; margin-bottom: 8px;"></h2>
-        <p><strong>Score: <span id="currentScore">0</span> / 75</strong></p>
+        <p><strong>Score: <span id="currentScore">0</span> / 100</strong></p>
         <div class="message-box" id="scenarioMessage"></div>
         <h3 style="margin:20px 0 10px;">What will you do?</h3>
         <div class="choices" id="choicesContainer"></div>
@@ -414,8 +414,8 @@
     function registerAndStart() {
       const usernameInput = document.getElementById('usernameInput').value.trim();
       const ageInput = parseInt(document.getElementById('ageInput').value);
-      if (!usernameInput) { alert("⚠️ Please enter a username to continue!"); return; }
-      if (isNaN(ageInput) || ageInput < 16 || ageInput > 50) { alert("⚠️ Please enter a valid age between 16 and 50!"); return; }
+      if (!usernameInput) { alert(" Please enter a username to continue!"); return; }
+      if (isNaN(ageInput) || ageInput < 16 || ageInput > 100) { alert(" Please enter a valid age between 16 and 100!"); return; }
       currentUser.username = usernameInput;
       currentUser.age = ageInput;
       document.querySelector('#welcomePage strong').textContent = `Welcome, ${usernameInput}!`;
@@ -459,19 +459,19 @@
             text: "Click the link and re-upload immediately", 
             points: -15, 
             type: "red", 
-            feedback: `<strong>❌ WRONG CHOICE (-15 pts)</strong><br><br>You fell for the phishing scam.<br><strong>Red flags:</strong> Suspicious sender address (not a real Coventry University domain), urgent/threatening language ("immediately"), and a fake link.<br><strong>Learning tip:</strong> Never click links in urgent assignment emails.<br><strong>What happened:</strong> The link led to a fake Turnitin page that stole your university login credentials.`
+            feedback: `<strong> WRONG CHOICE (-15 pts)</strong><br><br>You fell for the phishing scam.<br><strong>Red flags:</strong> Suspicious sender address (not a real Coventry University domain), urgent/threatening language ("immediately"), and a fake link.<br><strong>Learning tip:</strong> Never click links in urgent assignment emails.<br><strong>What happened:</strong> The link led to a fake Turnitin page that stole your university login credentials.`
           },
           { 
             text: "Open official Turnitin website yourself and check status", 
             points: 25, 
             type: "green", 
-            feedback: `<strong>✅ SAFE MOVE (+25 pts) – Correct & safe</strong><br><br>Excellent decision!<br><strong>Red flags avoided:</strong> Suspicious sender address, urgent tone, and fake link.<br><strong>Learning tip:</strong> Always go directly to the official website instead of clicking email links.<br><strong>What happened:</strong> Nothing — your account stayed safe.`
+            feedback: `<strong> SAFE MOVE (+25 pts) - Correct & safe</strong><br><br>Excellent decision!<br><strong>Red flags avoided:</strong> Suspicious sender address, urgent tone, and fake link.<br><strong>Learning tip:</strong> Always go directly to the official website instead of clicking email links.<br><strong>What happened:</strong> Nothing - your account stayed safe.`
           },
           { 
             text: "Reply asking for clarification", 
             points: -5, 
             type: "yellow", 
-            feedback: `<strong>⚠️ RISKY CHOICE (-5 pts) – Risky</strong><br><br>Replying confirms your email is active.<br><strong>Red flags:</strong> Urgent request from an unofficial-looking sender.<br><strong>Learning tip:</strong> Never reply to suspicious emails — it tells scammers you are a real target.<br><strong>What happened:</strong> Scammers now know your email is active and may send more targeted attacks.`
+            feedback: `<strong> RISKY CHOICE (-5 pts) - Risky</strong><br><br>Replying confirms your email is active.<br><strong>Red flags:</strong> Urgent request from an unofficial-looking sender.<br><strong>Learning tip:</strong> Never reply to suspicious emails — it tells scammers you are a real target.<br><strong>What happened:</strong> Scammers now know your email is active and may send more targeted attacks.`
           }
         ];
       } 
@@ -481,19 +481,19 @@
             text: "Click the link and reset password", 
             points: -15, 
             type: "red", 
-            feedback: `<strong>❌ WRONG CHOICE (-15 pts)</strong><br><br>Your account was compromised.<br><strong>Red flags:</strong> Fake IT support email address, urgency ("reset now"), suspicious link.<br><strong>Learning tip:</strong> Never click password reset links from emails.<br><strong>What happened:</strong> The fake page stole your university password.`
+            feedback: `<strong> WRONG CHOICE (-15 pts)</strong><br><br>Your account was compromised.<br><strong>Red flags:</strong> Fake IT support email address, urgency ("reset now"), suspicious link.<br><strong>Learning tip:</strong> Never click password reset links from emails.<br><strong>What happened:</strong> The fake page stole your university password.`
           },
           { 
             text: "Go directly to official Coventry IT portal", 
             points: 25, 
             type: "green", 
-            feedback: `<strong>✅ SAFE MOVE (+25 pts) – Correct & safe</strong><br><br>Perfect choice!<br><strong>Red flags avoided:</strong> Unsolicited email with fake link and urgency.<br><strong>Learning tip:</strong> Always verify IT requests by going to the official university portal.<br><strong>What happened:</strong> Your account remained secure.`
+            feedback: `<strong> SAFE MOVE (+25 pts) - Correct & safe</strong><br><br>Perfect choice!<br><strong>Red flags avoided:</strong> Unsolicited email with fake link and urgency.<br><strong>Learning tip:</strong> Always verify IT requests by going to the official university portal.<br><strong>What happened:</strong> Your account remained secure.`
           },
           { 
             text: "Ignore the email", 
             points: -5, 
             type: "yellow", 
-            feedback: `<strong>⚠️ RISKY CHOICE (-5 pts) – Risky</strong><br><br>Ignoring is better than clicking, but you should still verify.<br><strong>Red flags:</strong> Fake IT support email with urgent request.<br><strong>Learning tip:</strong> Report suspicious IT emails to the real university IT team.<br><strong>What happened:</strong> You avoided immediate harm but missed the chance to report the scam.`
+            feedback: `<strong> RISKY CHOICE (-5 pts) - Risky</strong><br><br>Ignoring is better than clicking, but you should still verify.<br><strong>Red flags:</strong> Fake IT support email with urgent request.<br><strong>Learning tip:</strong> Report suspicious IT emails to the real university IT team.<br><strong>What happened:</strong> You avoided immediate harm but missed the chance to report the scam.`
           }
         ];
       } 
@@ -503,19 +503,19 @@
             text: "Click the link and enter bank details", 
             points: -15, 
             type: "red", 
-            feedback: `<strong>❌ WRONG CHOICE (-15 pts)</strong><br><br>Your banking information was stolen.<br><strong>Red flags:</strong> Fake refund message, urgency before rent day, suspicious link.<br><strong>Learning tip:</strong> Never enter financial details from an email or SMS link.<br><strong>What happened:</strong> Scammers gained access to your bank account.`
+            feedback: `<strong> WRONG CHOICE (-15 pts)</strong><br><br>Your banking information was stolen.<br><strong>Red flags:</strong> Fake refund message, urgency before rent day, suspicious link.<br><strong>Learning tip:</strong> Never enter financial details from an email or SMS link.<br><strong>What happened:</strong> Scammers gained access to your bank account.`
           },
           { 
             text: "Check official university finance portal directly", 
             points: 25, 
             type: "green", 
-            feedback: `<strong>✅ SAFE MOVE (+25 pts) – Correct & safe</strong><br><br>Well done!<br><strong>Red flags avoided:</strong> Unsolicited SMS/email about tuition fee refund with link.<br><strong>Learning tip:</strong> Always check tuition/refund status directly on the university website.<br><strong>What happened:</strong> You stayed safe and protected your money.`
+            feedback: `<strong> SAFE MOVE (+25 pts) - Correct & safe</strong><br><br>Well done!<br><strong>Red flags avoided:</strong> Unsolicited SMS/email about tuition fee refund with link.<br><strong>Learning tip:</strong> Always check tuition/refund status directly on the university website.<br><strong>What happened:</strong> You stayed safe and protected your money.`
           },
           { 
             text: "Reply to the SMS", 
             points: -5, 
             type: "yellow", 
-            feedback: `<strong>⚠️ RISKY CHOICE (-5 pts) – Risky</strong><br><br>Replying confirms your phone number is active.<br><strong>Red flags:</strong> Unsolicited SMS about tuition fee refund.<br><strong>Learning tip:</strong> Never respond to unexpected banking or fee messages.<br><strong>What happened:</strong> Scammers now know your number is active for future phishing attempts.`
+            feedback: `<strong> RISKY CHOICE (-5 pts) - Risky</strong><br><br>Replying confirms your phone number is active.<br><strong>Red flags:</strong> Unsolicited SMS about tuition fee refund.<br><strong>Learning tip:</strong> Never respond to unexpected banking or fee messages.<br><strong>What happened:</strong> Scammers now know your number is active for future phishing attempts.`
           }
         ];
       }
@@ -577,29 +577,29 @@
       if (totalScore >= 70) {
         endingHTML = `
           <div class="hud">
-            <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px; color:#00ff88;">🎉 SAFE SEMESTER ACHIEVED!</h1>
-            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 75</strong></p>
+            <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px; color:#00ff88;"> SAFE SEMESTER ACHIEVED!</h1>
+            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 100</strong></p>
             <p style="color:#00ff88; font-size:1.4rem;">You are now a certified Phishing Defender!<br>Well done, ${currentUser.username || 'Alex'}!</p>
             <button onclick="backToWelcome()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">← BACK TO WELCOME PAGE</button>
-            <button onclick="playAgain()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">🔄 PLAY AGAIN</button>
+            <button onclick="playAgain()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;"> PLAY AGAIN</button>
           </div>`;
       } else if (totalScore >= 50) {
         endingHTML = `
           <div class="hud">
-            <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px; color:#ffcc00;">😟 STRESSFUL SEMESTER</h1>
-            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 75</strong></p>
+            <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px; color:#ffcc00;"> STRESSFUL SEMESTER</h1>
+            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 100</strong></p>
             <p>You had some close calls. Review the red flags and try again!</p>
             <button onclick="backToWelcome()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">← BACK TO WELCOME PAGE</button>
-            <button onclick="playAgain()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">🔄 PLAY AGAIN</button>
+            <button onclick="playAgain()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;"> PLAY AGAIN</button>
           </div>`;
       } else {
         endingHTML = `
           <div class="hud">
-            <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px; color:#ff3366;">💥 SEMESTER COMPROMISED</h1>
-            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 75</strong></p>
+            <h1 class="neon-text" style="font-size: 2.8rem; margin-bottom: 20px; color:#ff3366;"> SEMESTER COMPROMISED</h1>
+            <p style="font-size: 2rem; margin: 20px 0;">Final Score: <strong>${totalScore} / 100</strong></p>
             <p>Multiple phishing attempts succeeded. Review the learning tips and play again!</p>
             <button onclick="backToWelcome()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">← BACK TO WELCOME PAGE</button>
-            <button onclick="playAgain()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;">🔄 PLAY AGAIN</button>
+            <button onclick="playAgain()" class="btn btn-primary" style="margin-top:15px; padding:20px 40px; font-size:1.3rem;"> PLAY AGAIN</button>
           </div>`;
       }
       gameScreen.innerHTML = endingHTML;
@@ -614,7 +614,7 @@
       gameScreen.innerHTML = `
         <div class="hud">
           <h2 id="missionHeader" class="neon-text" style="font-size: 2.2rem; margin-bottom: 8px;"></h2>
-          <p><strong>Score: <span id="currentScore">0</span> / 75</strong></p>
+          <p><strong>Score: <span id="currentScore">0</span> / 100</strong></p>
           <div class="message-box" id="scenarioMessage"></div>
           <h3 style="margin:20px 0 10px;">What will you do?</h3>
           <div class="choices" id="choicesContainer"></div>
@@ -640,7 +640,7 @@
       let summaryHTML = `<h2 style="color:var(--neon);">Latest Game Feedback</h2>`;
       if (completedGames.length > 0) {
         const latest = completedGames[completedGames.length - 1];
-        summaryHTML += `<p><strong style="font-size:1.4rem;">Game ${latest.gameNumber} — Final Score: ${latest.score}/75</strong></p>`;
+        summaryHTML += `<p><strong style="font-size:1.4rem;">Game ${latest.gameNumber} - Final Score: ${latest.score}/100</strong></p>`;
         summaryHTML += `<div style="margin-top:20px;">`;
         latest.history.forEach(entry => {
           summaryHTML += `
