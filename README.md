@@ -96,4 +96,7 @@ After debugging and refinement, the game was finalised successfully. The complet
 Everyday Dilemma successfully combines education, interactivity, and immersive visual design to create a functional cybersecurity awareness game prototype. The project highlights the importance of safe online behaviour while providing students with practical experience in recognising and responding to phishing attacks. Through teamwork, research, design, and development, the project achieved its goal of creating an informative and engaging learning experience for university students.
 
 ---
+# How can you play this game 
+
+We 
 
