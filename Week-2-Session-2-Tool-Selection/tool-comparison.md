@@ -1,4 +1,4 @@
-Tool 1: HTML / CSS / JavaScript
+**Tool 1: HTML / CSS / JavaScript**
 What we could build with it:
 Web page structures and layouts
 Web-based games
