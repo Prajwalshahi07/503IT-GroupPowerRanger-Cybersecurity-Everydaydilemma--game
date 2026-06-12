@@ -98,5 +98,5 @@ Everyday Dilemma successfully combines education, interactivity, and immersive v
 ---
 # How can you play this game 
 
-We 
+We have the game live through Netlify. you can simply type EVeryday-Dilemma-game.netlify.app and enjoy our game in their. also we have the whole game file on the week 4 final game completion/Final prototype.htlm and download through that.
 
